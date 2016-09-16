@@ -168,10 +168,10 @@ public class Principal extends javax.swing.JFrame {
 
     private void cmdLlCafeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLlCafeActionPerformed
 
-        int cant_actual;
+        int  CA;
         c.llenarCafetera();
-        cant_actual = c.getCantidadActual();
-        txtCactual.setText("" + cant_actual);
+        CA = c.getCantidadActual();
+        txtCactual.setText("" + CA);
         JOptionPane.showMessageDialog(this, "Cafetera Llena");
         txtCactual.setEditable(false);
         txtCmaxima.setEditable(false);
@@ -185,18 +185,18 @@ public class Principal extends javax.swing.JFrame {
 
     private void cmdAggCafeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdAggCafeActionPerformed
 
-        int cant_cafe, cant_actual, sw = 0;
+        int CC, CA, sw = 0;
         do {
             try {
-                cant_cafe = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese la Cantidad de Café"));
-                if (cant_cafe <= 0) {
+                CC = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese la Cantidad de Café"));
+                if (CC <= 0) {
                     JOptionPane.showMessageDialog(this, "No Se Puede Agregar Una Cantidad Menor o Igual A 0", "ERROR", JOptionPane.ERROR_MESSAGE);
                     sw = 0;
                 } else {
-                    c.agregarCafe(cant_cafe);
+                    c.agregarCafe(CC);
                     JOptionPane.showMessageDialog(this, "Café Agregado");
-                    cant_actual = c.getCantidadActual();
-                    txtCactual.setText("" + cant_actual);
+                    CA = c.getCantidadActual();
+                    txtCactual.setText("" +  CA);
                     sw = 1;
                 }
             } catch (NumberFormatException e) {
@@ -245,7 +245,7 @@ public class Principal extends javax.swing.JFrame {
                     }
                     Sw = 1;
                 } catch (NumberFormatException e) {
-                    JOptionPane.showMessageDialog(this, "Ingrese un Número Válido", "ERROR", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Ingrese Un Número Válido Por Favor", "ERROR", JOptionPane.ERROR_MESSAGE);
                     Sw = 0;
                 } catch (NullPointerException e) {
                     int Aux2;
